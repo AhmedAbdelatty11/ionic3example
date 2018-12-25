@@ -8,7 +8,7 @@ import * as WC from 'woocommerce-api';
 })
 export class HomePage {
   WooCommerce: any;
-  products: any;
+  products: any[];
 
   constructor(public navCtrl: NavController) {
 
@@ -23,7 +23,7 @@ queryStringAuth: true // Force Basic Authentication as query string true and usi
 
     this.WooCommerce.getAsync("products").then( (data) => {
       console.log(JSON.parse(data.body));
-      this.products = JSON.parse(data.body);
+      this.products =JSON.parse(data.body);
     },
     (err) => {console.log(err)
     })
